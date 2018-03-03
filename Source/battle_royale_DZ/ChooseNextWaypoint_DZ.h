@@ -17,8 +17,11 @@ class BATTLE_ROYALE_DZ_API UChooseNextWaypoint_DZ : public UBTTaskNode
 		virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
 
 protected:
-	UPROPERTY(EditAnywhere, category = "Blackboard")
-		struct FBlackboardKeySelector Index; 
+	UPROPERTY(EditAnywhere, Category = "Blackboard")
+		struct FBlackboardKeySelector IndexKey; 
+
+	UPROPERTY(EditAnywhere, Category = "Blackboard")
+		struct FBlackboardKeySelector WaypointKey;
 	
 	
 	
