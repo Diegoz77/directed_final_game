@@ -4,10 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "battle_royale_DZProjectile.generated.h"
+#include "BallProjectile.generated.h"
 
 UCLASS(config=Game)
-class Abattle_royale_DZProjectile : public AActor
+class ABallProjectile : public AActor
 {
 	GENERATED_BODY()
 
@@ -20,7 +20,7 @@ class Abattle_royale_DZProjectile : public AActor
 	class UProjectileMovementComponent* ProjectileMovement;
 
 public:
-	Abattle_royale_DZProjectile();
+	ABallProjectile();
 
 	/** called when projectile hits something */
 	UFUNCTION()
