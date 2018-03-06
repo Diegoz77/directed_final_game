@@ -47,6 +47,7 @@ protected:
 
 public:
 
+	UFUNCTION(BlueprintCallable, Category = "Input")
 	/** Fires a projectile. */
 	void OnFire();
 
