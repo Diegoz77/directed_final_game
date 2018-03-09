@@ -10,4 +10,5 @@ Saved
 *.sln
 *.suo
 *.xcodeproj
-*.xcworkspace*_BuiltData.uasset
+*.xcworkspace
+Content/Levels/FirstPersonExampleMap_BuiltData.uasset
