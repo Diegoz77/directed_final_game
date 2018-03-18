@@ -4,6 +4,9 @@
 #include "battle_royale_DZHUD.h"
 #include "Player/FirstPersonCharacter.h"
 #include "UObject/ConstructorHelpers.h"
+#include "AI/Navigation/NavMeshBoundsVolume.h"
+#include "EngineUtils.h"
+#include "ActorPool.h"
 
 Abattle_royale_DZGameMode::Abattle_royale_DZGameMode()
 	: Super()
@@ -14,4 +17,23 @@ Abattle_royale_DZGameMode::Abattle_royale_DZGameMode()
 
 	// use our custom HUD class
 	HUDClass = Abattle_royale_DZHUD::StaticClass();
+
+	NavMeshBoundsVolumePool = CreateDefaultSubobject<UActorPool>(FName("Nav Mesh Bounds Volume Pool"));
+
+}
+
+
+void Abattle_royale_DZGameMode::PopulateBoundsVolumePool()
+{
+	auto VolumeIterator = TActorIterator<ANavMeshBoundsVolume>(GetWorld());
+	while (VolumeIterator)
+	{
+		AddToPool(*VolumeIterator);
+		++VolumeIterator;
+	}
+}
+
+void Abattle_royale_DZGameMode::AddToPool(ANavMeshBoundsVolume * VolumeToAdd)
+{
+	NavMeshBoundsVolumePool->Add(VolumeToAdd);
 }

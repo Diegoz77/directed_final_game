@@ -13,6 +13,19 @@ class Abattle_royale_DZGameMode : public AGameModeBase
 
 public:
 	Abattle_royale_DZGameMode();
+
+	UFUNCTION(BlueprintCallable, Category = "Bounds Pool")
+		void PopulateBoundsVolumePool();
+
+protected:
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Pool")
+		class UActorPool*  NavMeshBoundsVolumePool;
+
+
+
+private:
+	void AddToPool(class ANavMeshBoundsVolume *VolumeToAdd);
 };
 
 
